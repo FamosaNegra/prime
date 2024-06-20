@@ -23,7 +23,7 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Eu sou Pedro Ramos</ThemedText>
+        <ThemedText type="subtitle">Eu sou Pedro Ramos (Dev Full Stack)</ThemedText>
         <ThemedText>
         Este e meu primeiro projeto, queria somente verificar como é feita a   e estrutura de pasta dos components e etc.
 
