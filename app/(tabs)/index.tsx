@@ -1,4 +1,5 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import React from 'react';
+import { Image, StyleSheet, Platform, View } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -10,40 +11,34 @@ export default function HomeScreen() {
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
+        <View style={styles.imageContainer}>
+          <Image
+            source={{ uri: 'https://c.wallhere.com/photos/97/a2/One_Piece_Roronoa_Zoro_swordsman_sword_katana_red_eyes_demon_eyes-2242500.jpg!d' }}
+            style={styles.reactLogo}
+          />
+        </View>
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">Seja Bem vindo!</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+        <ThemedText type="subtitle">Eu sou Pedro Ramos</ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
+        Este e meu primeiro projeto, queria somente verificar como é feita a   e estrutura de pasta dos components e etc.
+
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        <ThemedText type="subtitle">Resolvi alguns problemas de instalação</ThemedText>
         <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
+Se a renderização no celular não funcionar deixe de lado o QR Code, utilize o IP do seu computador na porta 8082.
+Para conseguir o IP utilize o Windows+R > Cmd > ipconfig        </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+        <ThemedText type="subtitle">E por ultimo </ThemedText>
         <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+Bora Codar 😎          
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
@@ -60,11 +55,14 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
+  imageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+    width: '100%',
+    height: undefined, // Necessário para usar aspectRatio
+    aspectRatio: 1, // Ajuste a proporção conforme necessário
   },
 });
